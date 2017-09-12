@@ -14,10 +14,46 @@ li, .caption{
    transition:.3s;
 }
 
+.swiper-wrapper{
+    border-bottom: 1px solid #fff;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    background-image: none !important;
+    font-size: 70px;
+    margin-top: -60px !important;
+    text-shadow: 3px 3px 4px #581818;
+}
+.swiper-button-next:before{
+    background-image: none !important;
+    color: #fff;
+    content: "\f105";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.swiper-button-prev:before{
+    background-image: none !important;
+    color: #fff;
+    content: "\f104";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: .25rem;
+}
+
+.swiper-slide img,
 video.banner,
 .spotlight img,
 video {
     width: 100%;
+}
+
+.main-section{
+    margin-top: 40px;
 }
 
 h1{
@@ -244,7 +280,7 @@ section a:hover{
     border-radius: 25px;
     height: 45px;
     left: 50%;
-    margin-left: -20px;
+    margin-left: -25px;
     overflow: hidden;
     position: absolute;
     right: 50%;
@@ -382,8 +418,16 @@ nav .fa-search::before
 
 @media screen and (min-width: 640px) {
 
+    .main-section{
+        margin-top: 60px;
+    }
+
     .top-bar-section {
         width: 83.333%;
+    }
+
+    .top-bar-section ul li > a {
+        font-size: .95rem;
     }
 
     .footer .reg{
@@ -422,16 +466,18 @@ nav .fa-search::before
     .news .caption{
         position: absolute;
         bottom: -70px;
-        width: 100%;
+        width: 98%;
         background-image: url('../images/transMaroon.png');
     }
 
     .news .caption:hover{
-        position: absolute;
         bottom: 0px;
-        width: 100%;
-        background-image: url('../images/transMaroon.png');
+    }
 
+    .news .caption h3,
+    .news .caption p{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .audience .menu a{
@@ -462,6 +508,10 @@ nav .fa-search::before
 
 @media only screen and (min-width: 40rem) {
 
+    .main-section{
+        margin-top: 45px;
+    }
+
     .logo-wrapper {
         position: relative; 
     }
@@ -469,7 +519,7 @@ nav .fa-search::before
     .logo-wrapper .logo {
         border-radius: 40px;
         height: 80px;
-        margin-left: -20px;
+        margin-left: -40px;
         top: -50px;
         width: 80px;
     }
@@ -496,6 +546,11 @@ nav .fa-search::before
 }
 
 @media only screen and (min-width: 1024px) {
+
+    .main-section{
+        margin-top: 0px;
+    }
+
     .f-topbar-fixed,
     .f-topbar {
         padding-top: 120px !important;
