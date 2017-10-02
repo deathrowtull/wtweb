@@ -317,8 +317,10 @@ nav .fa-search::before
     color: #fff;
 }
 .color-secondary{
-    background-color: #fff;
-
+    background-color: #fff; 
+}
+.color-secondary ul li a{
+    color: #581818; 
 }
 .color-3{
     background-color: #666;
@@ -522,6 +524,10 @@ nav .fa-search::before
         margin-left: -40px;
         top: -50px;
         width: 80px;
+    }
+
+    .top-bar-section li:not(.has-form) a:not(.button) {
+        background: transparent;
     }
 
     .top-bar-right {
