@@ -1,0 +1,391 @@
+<!doctype html>
+<html ng-app="WtDirectory" class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>West Texas A&M</title>
+        <!-- build:css css/libraries.min.css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css css/app.min.css -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/app_override.css">
+        <!-- endbuild -->
+        <!-- build:js js/vendor/modernizr.min.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="appwt.js"></script>
+        <!-- endbuild -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+       
+    </head>
+    <body ng-controller="WtCtrl">
+         
+         
+         <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <div class="fixed">
+                    <nav class="tab-bar color-primary hide-for-large-up" style="border-bottom: #fff thin solid;">
+                        <section class="left-small">
+                            <a class="left-off-canvas-toggle menu-icon" href="#">
+                                <span></span>
+                            </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                            <!--<h1 class="title">WTAMU</h1>-->                            
+                            <!--<a class="logotext" href="http://www.wtamu.edu">
+                                WTAMU
+                            </a>-->
+                        </section>
+                        <section class="right-small">
+                            <a href="http://www.wtamu.edu/search/default.aspx"><i class="fa fa-search"></i></a>
+                        </section>
+                    </nav>
+                    <nav class="top-bar color-primary show-for-large-up" data-topbar role="navigation">
+                        <section class="top-bar-section  show-for-large-up">
+                            <ul class="title-area">
+                                <li class="name">
+                                    <a class="logotext" href="http://www.wtamu.edu">
+                                        West Texas A&amp;M University
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                        <section class="top-bar-section">
+                            <ul class="right" style="padding-top: 12px;">
+                                <li>
+                                    <select style="width: 150px">
+                                        <option value="">Go To</option>
+                                        <option value="volvo">Future Students</option>
+                                        <option value="saab"> Current Students</option>
+                                        <option value="mercedes">Faculty &amp; Staff</option>
+                                        <option value="audi">Alumni &amp; Friends</option>
+                                        <option value="audi">Parents &amp; Family</option>
+                                        <option value="audi">Visitors</option>
+                                    </select> 
+                                </li>
+                                <li>
+                                    <a href="az.html" class="button expand">
+                                        A-Z
+                                    </a>   
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/search" class="button expand">
+                                        <i class="fa fa-search" style="margin-top: -1px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                    <nav class="top-bar color-secondary scroll-hide" data-topbar role="navigation" style="border-bottom: #581818 thin solid;">
+                        <div class="logo-wrapper">
+                            <div class="logo">
+                                <img src="./images/WT.png">
+                            </div>
+                        </div>
+                        <section class="top-bar-section show-for-large-up">
+                            <ul class="left">
+                                <li>
+                                    <a href="/about/about-wtamu.aspx">About</a>
+                                </li>
+                                <li>
+                                    <a href="/admissionshub/default.aspx">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="/academics/default.aspx">Academics</a>
+                                </li>
+                            </ul>
+                            <ul class="right">
+                                <li>
+                                    <a href="/student-support/default.aspx">Student Support</a>
+                                </li>
+                                <li>
+                                    <a href="/giving/default.aspx">Giving</a>
+                                </li>
+                                <li>
+                                    <a href="/administration/veterans-services.aspx">Veterans</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                    <!--<nav class="audience scroll-hide color-secondary">
+                        <section class="show-for-large-up">
+                            <ul>
+                                <li>
+                                    <a href="http://www.wtamu.edu/home/future-students.aspx">Future Students</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/home/current-students.aspx">Current Students</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/home/faculty-staff.aspx">Faculty &amp; Staff</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.buffalum.com/">Alumni &amp; Friends</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/home/visitors.aspx">Parents &amp; Family</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/home/visitors.aspx">Visitors</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>-->
+                </div>
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li>
+                            <label>WTAMU</label>
+                        </li>
+                        <li>
+                            <a href="/about/about-wtamu.aspx">About</a>
+                        </li>
+                        <li>
+                            <a href="/admissionshub/default.aspx">Admissions</a>
+                        </li>
+                        <li>
+                            <a href="/academics/default.aspx">Academics</a>
+                        </li>
+                        <li>
+                            <a href="/student-support/default.aspx">Student Support</a>
+                        </li>
+                        <li>
+                            <a href="/giving/default.aspx">Giving</a>
+                        </li>
+                        <li>
+                            <a href="/administration/veterans-services.aspx">Veterans</a>
+                        </li>
+
+                        <li>
+                            <label>Audience</label>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/future-students.aspx">Future Students</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/current-students.aspx">Current Students</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/faculty-staff.aspx">Faculty &amp; Staff</a>
+                        </li>
+                        <li>
+                            <a href="http://www.buffalum.com/">Alumni &amp; Friends</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/visitors.aspx">Parents &amp; Family</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/visitors.aspx">Visitors</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside class="right-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li><label>Users</label></li>
+                        <li><a href="#">Hari Seldon</a></li>
+                        <li><a href="#">...</a></li>
+                    </ul>
+                </aside>
+                <section class="main-section">
+                    <div class="row">
+                        <div class="small-12 small-centered medium-10 medium-centered columns" style="padding-top 60px" >
+                            <label>
+                                <input type="text" ng-model="search.title" placeholder="Search" />
+                            </label>
+                        </div>
+                        <div class="small-12 small-centered medium-10 medium-centered columns">
+                            <br>
+                            <h2>Directory</h2>
+                            <ul class="small-block-grid-1 medium-block-grid-2">
+                                <!-- filters to just the name portion-->
+                                <li ng-repeat="todo in todos | filter:search">
+                                    <a href="http://www.ktre.com/story/36152753/wtamu-introduces-new-jbk-food-court">
+                                        <img src="./images/jbkfoodcourt.png"/>
+                                        <div class="caption">
+                                            <h3>{{todo.title}}</h3>
+                                            <p>{{todo.phone}}</p>
+                                            <p>{{todo.dep}}</p>
+                                            <p>{{todo.expertise}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>       
+                    
+                    <p>Search WT</p>
+                    <form id="cse-search-box" action="http://google.com/cse">
+                    <input type="hidden" name="cx" value="008889058614617203686:ueja-dwlvto" />
+                    <input type="hidden" name="ie" value="UTF-8" />
+                    <input type="text" name="q" size="2" />
+                    <input type="submit" name="sa" value="Search" />
+                    </form>
+                    <img src="http://www.google.com/cse/images/google_custom_search_smwide.gif">
+                 
+                    
+                    <div class="footer row color-primary">
+                        <div class="small-12 small-centered medium-10 medium-centered columns ">
+                            <ul class="small-block-grid-1 small-centered medium-block-grid-2">
+                                <li class="logo">
+                                    <a href="#" class="expand">
+                                        <img alt="The Texas A&M System" src="http://www.wtamu.edu/images/MemberTAMUS.png">
+                                    </a>
+                                </li>
+                                <li class="reg" style="font-size: .75em;">                                    
+                                    <a href="/about/web-accessibility.aspx">Accessibility</a> -
+                                    <a href="/home/accreditation.aspx">Accreditation</a> -
+                                    <a href="/administration/11-consumer-information.aspx">Consumer Information</a><br /> 
+                                    <a href="/about/contact-us.aspx">Contact Us</a> -
+                                    <a href="/about/emergency-information.aspx">Emergency Information</a> -
+                                    <a href="/webres/File/Administrative/EnergyManagementReport.pdf" target="_blank">Energy Management Report</a><br /> 
+                                    <a href="/ferpa">Family Educational Rights and Privacy Act (FERPA)</a><br /> 
+                                    <a href="/home/link-policy-and-privacy-statement.aspx#forms">Form Policy</a> -
+                                    <a href="http://www.wtamu.edu/about/house-bill-2504-requirements.aspx">House Bill 2504</a> -
+                                    <a href="https://www.tamus.edu/business/budgets-and-accounting/legislative-appropriations-requests/" target="_blank">Legislative Appropriation Request</a><br /> 
+                                    <a href="http://gov.texas.gov/" target="_blank">Texas Homeland Security</a> -
+                                    <a href="http://wtamu.edu/webres/File/Administrative/university_org_chart.pdf" target="_blank">University Organizational Chart</a><br /> 
+                                </li> 
+                                                                
+                            </ul>                            
+                        </div>
+                    </div>
+                    <div class="row color-secondary">
+                        <div class="small-12 small-centered medium-10 medium-centered columns " style="text-align: center; font-size: .75em;">
+                            <div>
+                                <a target="_blank" href="http://www.state.tx.us/">State of Texas</a> - 
+                                <a target="_blank" href="http://veterans.portal.texas.gov">Texas Veterans Portal</a> -
+                                <a target="_blank" href="https://secure.ethicspoint.com/domain/en/report_custom.asp?clientid=19681">Risk, Fraud and Misconduct Hotline</a> - 
+                                <a target="_blank" href="https://www.tsl.state.tx.us/search/node/">Statewide Search</a> - 
+                                <a href="/home/link-policy-and-privacy-statement.aspx">Link Policy and Privacy Statement</a> -
+                                <a href="/about/open-records.aspx">Open Records/Public Information Act</a> - 
+                                <a href="http://www.wtamu.edu/about/equal-opportunity-nondiscrimination.aspx">Equal Opportunity/Nondiscrimination </a> - 
+                                <a target="_blank" href="http://www.txhighereddata.org/approot/resumes/ir_launch.htm">Online Institutional Resumes</a> - 
+                                <a target="_blank" href="http://www.thecb.state.tx.us/apps/txcrews/">Texas Consumer Resource for Education and Workforce Statistics (Texas CREWS) </a>
+                            </div>
+
+                            <br /> 
+
+
+                            © West Texas A&M University | 
+                            All rights Reserved | 
+                            Canyon, Tx 79016 | 
+                            <a href="tel:806-290-0000">806-290-0000</a>                     
+                        </div>
+                    </div>
+                </section>   
+            </div>
+        </div>
+     
+    <!-- End Top Bar -->
+
+    </div>
+<!-- build:js js/vendor/libraries.min.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js js/vendor/foundation.min.js -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.abide.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.clearing.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.slider.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.tab.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+<!-- endbuild -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+<!-- build:js js/app.min.js -->
+<script src="js/app.js"></script>
+<!-- endbuild -->
+<script src="js/init.js"></script>
+<script>
+$(document).ready(function () {
+    //initialize swiper when document ready  
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    })  
+    var swiper = new Swiper('.swiper-container2', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        breakpoints: {            
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            }
+        }
+    });   
+    var swiper = new Swiper('.swiper-container3', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {            
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            }
+        }
+    });         
+  }); 
+</script>
+
+<script>
+  (function() {
+    var cx = '008889058614617203686:ueja-dwlvto';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+  
+  
+ //Works but this code is not functioning 
+    $( document ).ready(function() {
+
+  $( "div.button" ).click(function() {
+  $( "form.gsc-search-box" ).submit();
+    return false;
+  });
+  
+
+});
+  
+  
+</script>
+
+  
+
+
+
+
+</body>
+</html>
