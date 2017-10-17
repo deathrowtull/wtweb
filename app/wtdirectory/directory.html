@@ -18,7 +18,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/appwt.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <!-- endbuild -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
@@ -207,7 +207,7 @@
                             <!-- filters to just the name portion-->
                             <li ng-repeat="person in peoples | filter:search">
             
-                                        <img src="./images/alex-hunt-bodyphoto.jpg"/>
+                                        <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}"/>
                                         
                                         <div class="caption">
                                             <h3>{{person.name}}</h3>
