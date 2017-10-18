@@ -18,8 +18,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
-    <script type="text/javascript" src="js/services.js"></script>
+    
     <!-- endbuild -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -206,6 +205,8 @@
                         <ul class="small-block-grid-1 medium-block-grid-3">
                             <!-- filters to just the name portion-->
                             <li ng-repeat="person in peoples | filter:search">
+                                
+                                <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}"/>
  
                                         <div class="caption">
                                             <h3>{{person.name}}</h3>
@@ -315,68 +316,44 @@
     <script src="js/app.js"></script>
     <!-- endbuild -->
     <script src="js/init.js"></script>
+    
+    
+    
     <script>
-        $(document).ready(function() {
-            //initialize swiper when document ready  
-            var mySwiper = new Swiper('.swiper-container', {
-                // Optional parameters
-                loop: true,
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                autoplay: 5000,
-                autoplayDisableOnInteraction: false
-            })
-            var swiper = new Swiper('.swiper-container2', {
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                paginationClickable: true,
-                slidesPerView: 3,
-                spaceBetween: 30,
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 30,
-                    }
-                }
-            });
-            var swiper = new Swiper('.swiper-container3', {
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                paginationClickable: true,
-                slidesPerView: 1,
-                spaceBetween: 30,
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 30,
-                    }
-                }
-            });
-        });
-    </script>
+    
+    var App = angular.module('WtDirectory', []);
 
-    <script>
-        (function() {
-            var cx = '008889058614617203686:ueja-dwlvto';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-        })();
+    App.factory('peoplesFactory', function($http) {
+        var peoplesFactory = [];
+
+        factory.getPeoples = function() {
+            peoplesFactory = [{
+                "name": "Dr. Amjad Abdullat",
+                "title": "Associate Dean of Undergraduate Programs for The College of Business and Professor of Computer Information Systems",
+                "dep": "Computer Information and Decision Management, Department of",
+                "building": "Classroom Center",
+                "room": "220 A",
+                "phone": "806-651-2443",
+                "email": "aabdullat@wtamu.edu",
+                "thumb": "/images/amjad-abdullat-bodyphoto.jpg",
+                "url": "/amjad-abdullat",
+                "expertise": "Information Technology and Middle Eastern Affairs and Conflict"
+            }];
+            return peoplesFactory;
+        };
+
+        return peoplesFactory;
+    });
+    var App = angular.module('WtDirectory', []);
 
 
-        //Works but this code is not functioning 
-        $(document).ready(function() {
-
-            $("div.button").click(function() {
-                $("form.gsc-search-box").submit();
-                return false;
-            });
-
-
-        });
+   App.controller('WtCtrl', function($scope, $http) {
+       $http.get('people.json')
+           .then(function(res) {
+               $scope.peoples = res.data;
+               console.log($scope.peoples);
+           });
+   });
     </script>
 
 </body>
