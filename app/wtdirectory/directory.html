@@ -16,12 +16,12 @@
     <!-- endbuild -->
     <!-- build:js js/vendor/modernizr.min.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <!-- endbuild -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
 </head>
 
@@ -206,9 +206,7 @@
                         <ul class="small-block-grid-1 medium-block-grid-3">
                             <!-- filters to just the name portion-->
                             <li ng-repeat="person in peoples | filter:search">
-            
-                                        <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}"/>
-                                        
+ 
                                         <div class="caption">
                                             <h3>{{person.name}}</h3>
                                             <p>{{person.title}}</p>
@@ -380,11 +378,6 @@
 
         });
     </script>
-
-
-
-
-
 
 </body>
 
