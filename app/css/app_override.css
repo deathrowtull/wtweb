@@ -216,6 +216,10 @@ section a:hover{
     text-decoration: underline;
 }
 
+section ul.off-canvas-list li a:hover{
+    text-decoration: none !important;
+}
+
 .orbit-slide-number,
 .orbit-bullets-container{
     display: none;
