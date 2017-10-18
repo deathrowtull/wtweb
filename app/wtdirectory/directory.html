@@ -18,7 +18,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    
+
     <!-- endbuild -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
@@ -205,23 +205,23 @@
                         <ul class="small-block-grid-1 medium-block-grid-3">
                             <!-- filters to just the name portion-->
                             <li ng-repeat="person in peoples | filter:search">
-                                
-                                <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}"/>
- 
-                                        <div class="caption">
-                                            <h3>{{person.name}}</h3>
-                                            <p>{{person.title}}</p>
-                                            <p>{{person.dep}}</p>
-                                            <p>{{person.expertise}}</p>
-                                            <p>{{person.phone}}</p>
-                                            <p>{{person.email}}</p>
-                                        </div>
-                                    </a>
+
+                                <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
+
+                                <div class="caption">
+                                    <h3>{{person.name}}</h3>
+                                    <p>{{person.title}}</p>
+                                    <p>{{person.dep}}</p>
+                                    <p>{{person.expertise}}</p>
+                                    <p>{{person.phone}}</p>
+                                    <p>{{person.email}}</p>
+                                </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                
+
 
                 <p>Search WT</p>
                 <form id="cse-search-box" action="http://google.com/cse">
@@ -316,44 +316,19 @@
     <script src="js/app.js"></script>
     <!-- endbuild -->
     <script src="js/init.js"></script>
-    
-    
-    
+
+
+
     <script>
-    
-    var App = angular.module('WtDirectory', []);
-
-    App.factory('peoplesFactory', function($http) {
-        var peoplesFactory = [];
-
-        factory.getPeoples = function() {
-            peoplesFactory = [{
-                "name": "Dr. Amjad Abdullat",
-                "title": "Associate Dean of Undergraduate Programs for The College of Business and Professor of Computer Information Systems",
-                "dep": "Computer Information and Decision Management, Department of",
-                "building": "Classroom Center",
-                "room": "220 A",
-                "phone": "806-651-2443",
-                "email": "aabdullat@wtamu.edu",
-                "thumb": "/images/amjad-abdullat-bodyphoto.jpg",
-                "url": "/amjad-abdullat",
-                "expertise": "Information Technology and Middle Eastern Affairs and Conflict"
-            }];
-            return peoplesFactory;
-        };
-
-        return peoplesFactory;
-    });
-    var App = angular.module('WtDirectory', []);
-
-
-   App.controller('WtCtrl', function($scope, $http) {
-       $http.get('people.json')
-           .then(function(res) {
-               $scope.peoples = res.data;
-               console.log($scope.peoples);
-           });
-   });
+        var App = angular.module('WtDirectory', []);
+        
+        App.controller('WtCtrl', function($scope, $http) {
+            $http.get('people.json')
+                .then(function(res) {
+                    $scope.peoples = res.data;
+                    console.log($scope.peoples);
+                });
+        });
     </script>
 
 </body>
