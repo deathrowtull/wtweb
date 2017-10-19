@@ -6172,7 +6172,11 @@ meta.foundation-mq-topbar {
 .top-bar-section ul li > button.info:hover, .top-bar-section ul li > button.info:focus {
   color: #FFFFFF;
 }
-
+.top-bar-section ul li:hover:not(.has-form) > a {
+  background-color: #555555;
+  color: #FFFFFF;
+  background: #222222;
+}
 .top-bar-section ul li.active > a {
   background: #581818;
   color: #FFFFFF;
@@ -6475,6 +6479,7 @@ meta.foundation-mq-topbar {
   .no-js .top-bar-section ul li:hover > a {
     background-color: #555555;
     background: #222222;
+    color: #FFFFFF;
   }
   .no-js .top-bar-section ul li:active > a {
     background: #581818;
