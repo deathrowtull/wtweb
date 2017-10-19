@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>West Texas A&M</title>
+    <title>West Texas A&amp;M</title>
     <!-- build:css css/libraries.min.css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <!-- bower:css -->
@@ -24,7 +24,7 @@
 
 </head>
 
-<body ng-controller="WtCtrl">
+<body ng-controller="directorySearch">
 
     <div class="off-canvas-wrap" data-offcanvas>
         <div class="inner-wrap">
@@ -112,31 +112,7 @@
                             </li>
                         </ul>
                     </section>
-                </nav>
-                <!--<nav class="audience scroll-hide color-secondary">
-                        <section class="show-for-large-up">
-                            <ul>
-                                <li>
-                                    <a href="http://www.wtamu.edu/home/future-students.aspx">Future Students</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.wtamu.edu/home/current-students.aspx">Current Students</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.wtamu.edu/home/faculty-staff.aspx">Faculty &amp; Staff</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.buffalum.com/">Alumni &amp; Friends</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.wtamu.edu/home/visitors.aspx">Parents &amp; Family</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.wtamu.edu/home/visitors.aspx">Visitors</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </nav>-->
+                </nav>                
             </div>
             <aside class="left-off-canvas-menu">
                 <ul class="off-canvas-list">
@@ -194,17 +170,17 @@
             </aside>
             <section class="main-section">
                 <div class="row">
-                    <div class="small-12 small-centered medium-10 medium-centered columns" style="padding-top 60px">
+                    <div class="small-12 small-centered medium-10 medium-centered columns">
                         <label>
-                                <input type="text" ng-model="search.name" placeholder="Search" />
-                            </label>
+                            <input type="text" ng-model="search.name" placeholder="Search" />
+                        </label>
                     </div>
                     <div class="small-12 small-centered medium-10 medium-centered columns">
                         <br>
                         <h2>Directory</h2>
                         <ul class="small-block-grid-1 medium-block-grid-3">
                             <!-- filters to just the name portion-->
-                            <li ng-repeat="person in peoples | filter:search">
+                            <li ng-repeat="person in people | filter:search">
 
                                 <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
 
@@ -221,25 +197,13 @@
                         </ul>
                     </div>
                 </div>
-
-
-                <!--<p>Search WT</p>
-                <form id="cse-search-box" action="http://google.com/cse">
-                    <input type="hidden" name="cx" value="008889058614617203686:ueja-dwlvto" />
-                    <input type="hidden" name="ie" value="UTF-8" />
-                    <input type="text" name="q" size="2" />
-                    <input type="submit" name="sa" value="Search" />
-                </form>
-                <img src="http://www.google.com/cse/images/google_custom_search_smwide.gif">-->
-
-
                 <div class="footer row color-primary">
                     <div class="small-12 small-centered medium-10 medium-centered columns ">
                         <ul class="small-block-grid-1 small-centered medium-block-grid-2">
                             <li class="logo">
                                 <a href="#" class="expand">
-                                        <img alt="The Texas A&M System" src="http://www.wtamu.edu/images/MemberTAMUS.png">
-                                    </a>
+                                    <img alt="The Texas A&M System" src="http://www.wtamu.edu/images/MemberTAMUS.png">
+                                </a>
                             </li>
                             <li class="reg" style="font-size: .75em;">
                                 <a href="/about/web-accessibility.aspx">Accessibility</a> -
@@ -255,7 +219,6 @@
                                 <a href="http://gov.texas.gov/" target="_blank">Texas Homeland Security</a> -
                                 <a href="http://wtamu.edu/webres/File/Administrative/university_org_chart.pdf" target="_blank">University Organizational Chart</a><br />
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -273,7 +236,7 @@
                             <a target="_blank" href="http://www.thecb.state.tx.us/apps/txcrews/">Texas Consumer Resource for Education and Workforce Statistics (Texas CREWS) </a>
                         </div>
 
-                        <br /> © West Texas A&M University | All rights Reserved | Canyon, Tx 79016 |
+                        <br /> © West Texas A&amp;M University | All rights Reserved | Canyon, Tx 79016 |
                         <a href="tel:806-290-0000">806-290-0000</a>
                     </div>
                 </div>
@@ -317,16 +280,14 @@
     <!-- endbuild -->
     <script src="js/init.js"></script>
 
-
-
     <script>
         var App = angular.module('WtDirectory', []);
         
-        App.controller('WtCtrl', function($scope, $http) {
+        App.controller('directorySearch', function($scope, $http) {
             $http.get('people.json')
                 .then(function(res) {
-                    $scope.peoples = res.data;
-                    console.log($scope.peoples);
+                    $scope.people = res.data;
+                    console.log($scope.people);
                 });
         });
     </script>
