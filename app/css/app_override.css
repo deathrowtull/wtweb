@@ -290,6 +290,12 @@ section ul.off-canvas-list li a:hover{
     width: 50px;
 }
 
+.round {
+    border-radius: 70px;
+    height: 150px;  
+    width: 150px;
+}
+
 .top-bar-section .has-form {
     padding-top: 12px ;
 }
