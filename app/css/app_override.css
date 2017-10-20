@@ -55,6 +55,10 @@ li, .caption{
     padding-right: .25rem;
 }
 
+.swiper-container .swiper-button-disabled{
+    display: none;
+}
+
 .swiper-slide img,
 video.banner,
 .spotlight img,

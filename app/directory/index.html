@@ -50,8 +50,8 @@
                         <ul class="title-area">
                             <li class="name">
                                 <a class="logotext" href="http://www.wtamu.edu">
-                                        West Texas A&amp;M University
-                                    </a>
+                                    West Texas A&amp;M University
+                                </a>
                             </li>
                         </ul>
                     </section>
@@ -60,24 +60,24 @@
                         <ul class="right" style="padding-top: 12px;">
                             <li>
                                 <select style="width: 150px">
-                                        <option value="">Go To</option>
-                                        <option value="volvo">Future Students</option>
-                                        <option value="saab"> Current Students</option>
-                                        <option value="mercedes">Faculty &amp; Staff</option>
-                                        <option value="audi">Alumni &amp; Friends</option>
-                                        <option value="audi">Parents &amp; Family</option>
-                                        <option value="audi">Visitors</option>
-                                    </select>
+                                    <option value="">Go To</option>
+                                    <option value="volvo">Future Students</option>
+                                    <option value="saab"> Current Students</option>
+                                    <option value="mercedes">Faculty &amp; Staff</option>
+                                    <option value="audi">Alumni &amp; Friends</option>
+                                    <option value="audi">Parents &amp; Family</option>
+                                    <option value="audi">Visitors</option>
+                                </select>
                             </li>
                             <li>
                                 <a href="az.html" class="button expand">
-                                        A-Z
-                                    </a>
+                                    A-Z
+                                </a>
                             </li>
                             <li>
                                 <a href="http://www.wtamu.edu/search" class="button expand">
-                                        <i class="fa fa-search" style="margin-top: -1px;"></i>
-                                    </a>
+                                    <i class="fa fa-search" style="margin-top: -1px;"></i>
+                                </a>
                             </li>
                         </ul>
                     </section>
@@ -178,13 +178,11 @@
                     <div class="small-12 small-centered medium-10 medium-centered columns">
                         <br>
                         <h2>Directory</h2>
-                        <ul class="small-block-grid-1 medium-block-grid-3">
+                        <ul class="small-block-grid-1 medium-block-grid-2">
                             <!-- filters to just the name portion-->
-                            <li ng-repeat="person in people | filter:search">
+                            <li ng-repeat="person in people | filter:search">                                
 
-                                <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
-
-                                <div class="caption">
+                                <div class="caption small-8" style="float: left;">
                                     <h3>{{person.name}}</h3>
                                     <p>{{person.title}}</p>
                                     <p>{{person.dep}}</p>
@@ -192,7 +190,10 @@
                                     <p>{{person.phone}}</p>
                                     <p>{{person.email}}</p>
                                 </div>
-                                </a>
+
+                                <div class="small-4" style="float: left;">
+                                    <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -287,7 +288,7 @@
             $http.get('people.json')
                 .then(function(res) {
                     $scope.people = res.data;
-                    console.log($scope.people);
+                    //console.log($scope.people);
                 });
         });
     </script>
