@@ -227,7 +227,7 @@ a[href^="http://maps.google.com/maps?daddr="]::before {
 }
 
 .small{
-    font-size: .5em !important;
+    font-size: 1.3em !important;
 }
 
 section a:hover{
@@ -440,6 +440,15 @@ nav .fa-search::before
     padding: 1rem 1rem 1.0625rem;
 }
 
+.directory .dimage{
+    height: 150px;
+    overflow: hidden;
+}
+
+.directory .dimage image{
+    width: 100%;
+}
+
 @media screen and (min-width: 640px) {
 
     .main-section{
@@ -523,6 +532,10 @@ nav .fa-search::before
     }
     .right {
         padding-left: 10px;
+    }
+
+    .directory .dimage{
+        height: 250px;
     }
 
 }
