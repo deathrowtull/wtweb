@@ -6174,7 +6174,6 @@ meta.foundation-mq-topbar {
 }
 .top-bar-section ul li:hover:not(.has-form) > a {
   background-color: #555555;
-  color: #FFFFFF;
   background: #222222;
 }
 .top-bar-section ul li.active > a {
@@ -6758,7 +6757,6 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  color: #6f6f6f;
   font-size: 60%;
   line-height: 0;
 }
