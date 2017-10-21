@@ -7,10 +7,6 @@ a > *
    transition:.3s;
 }
 
-.swiper-wrapper{
-    //border-bottom: 1px solid #fff;
-}
-
 .swiper-slide .relative {
     position: relative;
 }
@@ -56,13 +52,6 @@ a > *
     display: none;
 }
 
-.swiper-slide img,
-video.banner,
-.spotlight img,
-video {
-    width: 100%;
-}
-
 .swiper-wrapper .swiper-slide > *{
     float:left;
 }
@@ -71,27 +60,18 @@ video {
     margin-top: 40px;
 }
 
-h1{
-    font-size: 2.75em
-}
-h2{
-    font-size: 2.5em
-}
-h3{
-    font-size: 1.5em
-}
-
-h1, h2, h3, h4, h5, h6{
-    color: #581818;
-    font-weight: Bold;
-}
-
 .top-bar .logotext,
 .logotext{
     font-family: Georgia;
     font-size: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+div[class^="small"],
+div[class^="medium"],
+div[class^="large"]{
+    float: left;
 }
 
 a[href^="tel:"]::before {
@@ -121,21 +101,8 @@ a[href^="http://maps.google.com/maps?daddr="]::before {
     padding-right: .25rem;
 }
 
-.top-bar-section ul li > a:hover {
-  font-color: ;
-}
-
 .nav-wrapper{
     background-color: #581818;
-}
-
-.color-gold{
-    background-color: #8d7149;
-    color: #fff;
-}
-
-.color-gold a{
-    color: #fff;
 }
 
 .f-topbar-fixed,
@@ -156,6 +123,7 @@ a[href^="http://maps.google.com/maps?daddr="]::before {
     color: #581818;
     font-family: Georgia, serif;
 }
+
 .tab-bar-section.middle {
     left: 2.8125rem;
     right: none;
@@ -210,9 +178,10 @@ a[href^="http://maps.google.com/maps?daddr="]::before {
     text-decoration: none;
 }
 
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+small {
     font-size: 80%;
     line-height: 0;
+    color: inherit !important;
 }
 
 section a:hover{
@@ -247,6 +216,19 @@ section ul.off-canvas-list li a:hover{
 .top-bar-section ul li {
     background-color: transparent;
 }
+.top-bar-section ul li.has-dropdown a{
+    color: white;
+    font-size: 1.1em;
+}
+.top-bar-section .has-dropdown .dropdown:focus{
+    position: static !important;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    clip: auto;
+    display: block;
+    position: absolute !important;
+}
 .top-bar-section  li:not(.has-form) a:not(.button) {
     padding: .4rem 0.9375rem;
 }
@@ -254,24 +236,20 @@ section ul.off-canvas-list li a:hover{
 .top-bar-section .right li:not(.has-form) a:not(.button) {
     padding: 0 0.9375rem;
 }
-.top-bar-section1 ul li > a.logotext:hover {
-    color: #581818;
-}
-.top-bar-section1 ul li:hover:not(.has-form) > a,
-{
-    color: #581818;
-}
-.top-bar-section1 ul li:hover:not(.has-form) > a.logotext {
-    color: #fff;
-}
-.top-bar-section li:hover:not(.has-form) a:hover:not(.button) {
-    background-color: transparent;
-}
 .top-bar input, .top-bar select, .top-bar .button, .top-bar button {
     font-size: inherit;
     height: 2rem;
     position: relative;
     top: inherit;
+}
+
+.top-bar a.logotext,
+.top-bar a.logotext:hover{
+    font-family: Georgia;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
 }
 
 .logo-wrapper {
@@ -291,9 +269,9 @@ section ul.off-canvas-list li a:hover{
 }
 
 .round {
-    border-radius: 70px;
-    height: 150px;  
-    width: 150px;
+    border-radius: 50%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .top-bar-section .has-form {
@@ -564,14 +542,6 @@ nav .fa-search::before
     .f-topbar-fixed,
     .f-topbar {
         padding-top: 120px !important;
-    }
-
-    .top-bar .logotext,
-    .logotext{
-        font-family: Georgia;
-        font-size: 18px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
     }
 
     .news .caption{

@@ -95,7 +95,7 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
 
-// $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -114,10 +114,12 @@ $include-html-global-classes: $include-html-classes;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$maroon			: #581818;
+$gray			: #666666;
 
 // We use these as default colors throughout
- $primary-color: #581818;
- $secondary-color: #666666;
+ $primary-color: $maroon;
+ $secondary-color: $gray;
  $alert-color: red;
  $success-color: green;
  $warning-color: yellow;
@@ -125,8 +127,8 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control various global styles
 // $body-bg: $white;
-// $body-font-color: $jet;
- $body-font-family: $font-family-sans-serif;
+$body-font-color: $maroon;
+$body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -136,11 +138,11 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control text direction settings
 // $text-direction: ltr;
 // $opposite-direction: right;
-// $default-float: left;
+$default-float: left;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
- $global-radius: 0px;
+$global-radius: 0px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -213,7 +215,7 @@ $include-html-global-classes: $include-html-classes;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
+ $header-font-color: inherit;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -237,14 +239,14 @@ $include-html-global-classes: $include-html-classes;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-// $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+ $subheader-font-color: $header-font-color;
 // $subheader-font-weight: $font-weight-normal;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
 // $small-font-size: 60%;
-// $small-font-color: scale-color($header-font-color, $lightness: 35%);
+ $small-font-color: $header-font-color;
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
@@ -294,11 +296,11 @@ $include-html-global-classes: $include-html-classes;
 // $definition-list-margin-bottom: rem-calc(12);
 
 // We use these to style blockquotes
-// $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
-// $blockquote-padding: rem-calc(9 20 0 19);
-// $blockquote-border: 1px solid $gainsboro;
+$blockquote-font-color: $header-font-color;
+$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: none;
 // $blockquote-cite-font-size: rem-calc(13);
-// $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
+$blockquote-cite-font-color: $header-font-color;
 // $blockquote-cite-link-color: $blockquote-cite-font-color;
 
 // Acronym styles
@@ -909,46 +911,7 @@ $include-html-global-classes: $include-html-classes;
 
 // 19. Orbit
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// $include-html-orbit-classes: $include-html-classes;
-
-// We use these to control the caption styles
-// $orbit-container-bg: none;
-// $orbit-caption-bg: rgba(51,51,51, .8);
-// $orbit-caption-font-color: $white;
-// $orbit-caption-font-size: rem-calc(14);
-// $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-// $orbit-caption-padding: rem-calc(10 14);
-// $orbit-caption-height: auto;
-
-// We use these to control the left/right nav styles
-// $orbit-nav-bg: transparent;
-// $orbit-nav-bg-hover: rgba(0,0,0,0.3);
-// $orbit-nav-arrow-color: $white;
-// $orbit-nav-arrow-color-hover: $white;
-
-// We use these to control the timer styles
-// $orbit-timer-bg: rgba(255,255,255,0.3);
-// $orbit-timer-show-progress-bar: true;
-
-// We use these to control the bullet nav styles
-// $orbit-bullet-nav-color: $iron;
-// $orbit-bullet-nav-color-active: $aluminum;
-// $orbit-bullet-radius: rem-calc(9);
-
-// We use these to controls the style of slide numbers
-// $orbit-slide-number-bg: rgba(0,0,0,0);
-// $orbit-slide-number-font-color: $white;
-// $orbit-slide-number-padding: rem-calc(5);
-
-// Graceful Loading Wrapper and preloader
-// $wrapper-class: "slideshow-wrapper";
-// $preloader-class: "preloader";
-
-// Hide controls on small
-// $orbit-nav-hide-for-small: true;
-// $orbit-bullet-hide-for-small: true;
-// $orbit-timer-hide-for-small: true;
+// removed
 
 // 20. Pagination
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1188,7 +1151,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control heading styles.
 // $side-nav-heading-color: $side-nav-link-color;
 // $side-nav-heading-font-size: $side-nav-font-size;
-// $side-nav-heading-font-weight: bold;
+$side-nav-heading-font-weight: bold;
 // $side-nav-heading-text-transform: uppercase;
 
 // We use these to control border styles
@@ -1403,7 +1366,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
+$topbar-bg-color: $white;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1415,15 +1378,15 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
-// $topbar-link-color-active: $white;
-// $topbar-link-color-active-hover: $white;
+$topbar-link-color: $primary-color;
+$topbar-link-color-hover: inherit;
+$topbar-link-color-active: scale-color($primary-color, $lightness: -55%);
+$topbar-link-color-active-hover: scale-color($primary-color, $lightness: -55%);
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: inherit;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
@@ -1436,7 +1399,7 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: $primary-color;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
