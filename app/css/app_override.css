@@ -53,8 +53,9 @@ img{
     padding-right: .25rem;
 }
 
-.banner .swiper-container{
-    border-bottom: thin #fff solid;
+.banner.columns.medium-centered{
+    padding-left: 0px ;
+    padding-right: 0px ;
 }
 
 .swiper-container .swiper-button-disabled{
@@ -103,6 +104,35 @@ a[href^="mailto:"]::before {
 
 a[href^="http://maps.google.com/maps?daddr="]::before {
     content: "\f276";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: .25rem;
+}
+
+a[href$=".pdf"]::before {
+    content: "\f1c1";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: .25rem;
+}
+
+a[href$=".doc"]::before,
+a[href$=".docx"]::before {
+    content: "\f1c2";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: .25rem;
+}
+
+a[href$=".xls"]::before,
+a[href$=".xlsx"]::before {
+    content: "\f1c3";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -264,6 +294,8 @@ section ul.off-canvas-list li a:hover{
 
 .logo-wrapper .logo {
     border-radius: 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     height: 45px;
     left: 50%;
     margin-left: -25px;
@@ -530,6 +562,8 @@ nav .fa-search::before
 
     .logo-wrapper .logo {
         border-radius: 40px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         height: 80px;
         margin-left: -40px;
         top: -50px;
@@ -572,6 +606,11 @@ nav .fa-search::before
         padding-top: 120px !important;
     }
 
+    .banner.columns.medium-centered{
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+    }
+
     .news .caption{
         position: absolute;
         bottom: -120px;
@@ -604,6 +643,8 @@ nav .fa-search::before
 
     .logo-wrapper .logo {
         border-radius: 45px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         height: 90px;
         left: 50%;
         margin-left: -45px;
@@ -611,7 +652,7 @@ nav .fa-search::before
         width: 90px;
     }
 
-    .medium-10 {
+    .medium-10, .large-10 {
         max-width: 1024px
     }
 }
@@ -707,4 +748,22 @@ nav .fa-search::before
 
 .animation.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+.gsc-control-cse {
+    padding: 0 !important;
+}
+.gsc-resultsHeader {
+    display: none !important;
+}
+.gsc-table-result {
+    border: none;
+    margin-bottom: 0;
+}
+.gsc-thumbnail-inside,
+.gsc-thumbnail,
+.gsc-url-top,
+.gsc-results .gsc-cursor-box{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
