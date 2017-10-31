@@ -50,18 +50,7 @@
                         </section>
                         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                         <section class="top-bar-section">
-                            <ul class="right" style="padding-top: 12px;">
-                                <li>
-                                    <!--<select style="width: 150px">
-                                        <option value="">Go To</option>
-                                        <option value="volvo">Future Students</option>
-                                        <option value="saab"> Current Students</option>
-                                        <option value="mercedes">Faculty &amp; Staff</option>
-                                        <option value="audi">Alumni &amp; Friends</option>
-                                        <option value="audi">Parents &amp; Family</option>
-                                        <option value="audi">Visitors</option>
-                                    </select> -->
-                                </li>
+                            <ul class="right" style="padding-top: 12px;">                                
                                 <li class="has-dropdown">
                                     <a style="line-height: 2rem" href="#">Go To</a>
                                     <ul class="dropdown">
@@ -169,9 +158,9 @@
                 </aside>                
                 <section class="main-section">
                     <div class="row color-primary"  style="padding-top: 0;">
-                        <div class="fade color-primary" style="padding-top: 0; padding-bottom: 0">
+                        <div class="fade color-primary padding-bottom-no" style="padding-top: 0;">
                             <div class="small-12 small-centered large-10 banner medium-centered columns">
-                                <div class="swiper-container">
+                                <div class="swiper-container padding-bottom-no" data-time="10000" data-loop="true">
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper color-primary">
                                         <!-- Slides -->
@@ -239,26 +228,26 @@
                     </div>                    
                     <div class="featured row color-tertiary back-old">
                         <div class="fade color-tertiary">
-                            <div class="small-12 small-centered medium-10 medium-centered columns ">
+                            <div class="small-12 small-centered medium-10 medium-centered columns">
                                 <ul class="small-block-grid-1 medium-block-grid-2">                                
                                     <li>    
                                         <a href="http://www.wtamu.edu/home/future-students.aspx">      
-                                            <div class="small-12 border">Buff Transit</div>
+                                            <div class="small-12 border"><i class="fa fa-bus"></i> Buff Transit</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="http://www.wtamu.edu/home/current-students.aspx">     
-                                           <div class="small-12 border"> Admissions</div>
+                                           <div class="small-12 border"><i class="fa fa-institution"></i> Admissions</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="http://www.wtamu.edu/home/faculty-staff.aspx">    
-                                            <div class="small-12 border">Majors</div>
+                                            <div class="small-12 border"><i class="fa fa-graduation-cap"></i> Majors</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./research.html">
-                                            <div class="small-12 border">Research</div>
+                                            <div class="small-12 border"><i class="fa fa-flask"></i> Research</div>
                                         </a>
                                     </li>                                
                                 </ul>
@@ -266,7 +255,7 @@
                         </div>
                     </div>
                     <div class="spotlight row">
-                        <div class="small-12 small-centered medium-10 medium-centered columns ">
+                        <div class="small-12 small-centered medium-10 medium-centered columns padding-bottom-no">
                             <h2>Spotlight</h2>
                             <div class="swiper-container" data-tablet-slides="2" data-desktop-slides="3">
                                 <div class="swiper-wrapper">
@@ -290,6 +279,8 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
                                 <!-- If we need navigation buttons -->
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
@@ -362,6 +353,8 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
                                 <!-- If we need navigation buttons -->
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
@@ -426,8 +419,9 @@
                     </div>
                     <div class="row color-primary" style="padding-bottom: 3rem">
                         <div class="small-10 small-centered medium-10 columns ">                            
-                            <div class="small-4 medium-2"> 
-                                <img class="round" alt="image" src="/images/smalley.png">                          
+                            <div class="small-4 medium-2" style="position: relative"> 
+                                <img class="round" alt="image" src="/images/smalley.png">        
+                                <img class="overlay hide-for-medium-up" alt="image" src="./images/right-triangle.png" style="height: 100%"/>                  
                             </div>
                             <div class="small-8 medium-10">  
                                 <blockquote>
@@ -520,12 +514,12 @@
                 </section>   
             </div>
         </div>     
-    
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
         <!-- build:js js/vendor/libraries.min.js -->
         <!-- bower:js -->
-        <script src="./bower_components/jquery/dist/jquery.js"></script>
-        <script src="./bower_components/fastclick/lib/fastclick.js"></script>
-        <script src="./bower_components/jquery.cookie/jquery.cookie.js"></script>
+        <script src="bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:js js/vendor/foundation.min.js -->
@@ -573,9 +567,23 @@
                         desktop = 1;
                     }
 
+                var time = $(this).attr('data-time');  
+                if (!time) {
+                        time = 0;
+                    }
+
+                var loop = $(this).attr('data-loop');  
+                if (!loop) {
+                        loop = false;
+                    }
+
                 var swiper = new Swiper($(this)[0], {
                     nextButton: '.swiper-button-next',
                     prevButton: '.swiper-button-prev',
+                    autoplay: time,
+                    loop: loop,
+                    autoplayDisableOnInteraction: false,
+                    pagination: '.swiper-pagination',
                     paginationClickable: true,
                     slidesPerView: desktop,
                     spaceBetween: 30,
