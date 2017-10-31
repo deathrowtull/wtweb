@@ -12,6 +12,25 @@ img{
     width: 100%;
 }
 
+ul > li:last-child{
+//    padding-bottom: 0;
+}
+
+.row {
+    max-width: 100%;
+}
+
+.row > div{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.banner .swiper-slide h1{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .swiper-slide .relative {
     position: relative;
 }
@@ -151,11 +170,6 @@ a[href$=".xlsx"]::before {
 }
 .f-topbar-fixed {
     margin-top: -20px;
-}
-
-.row {
-    max-width: 100%;
-    padding-top: 20px;
 }
 
 .top-bar .title-area h1 a {
@@ -348,7 +362,7 @@ nav .fa-search::before
 }
 .color-3,
 .color-tertiary{
-    background-color: #666;
+    background-color: #444;
     color: #fff;
 }
 .color-3 a,
@@ -358,7 +372,7 @@ nav .fa-search::before
 
 .color-3 a:hover,
 .color-tertiary a:hover{
-    background-color: #444;
+    background-color: #333;
 }
 
 .color-primary a,
@@ -401,11 +415,9 @@ nav .fa-search::before
 
 .news,
 .spotlight,
-.featured,
 .events,
 .social{
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 1rem;
 }
 
 .news img{
@@ -592,6 +604,39 @@ nav .fa-search::before
     } 
 
     .banner video{
+    }
+
+    .banner .swiper-slide h1{
+        text-align: left;
+        padding-left: 20px; 
+    }
+
+    .back-spirit{
+        background-image: url('../images/spiritbaw.jpg'), url('../images/spiritbaw.jpg');  
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .back-spirit.split{
+        background-image: url('../images/spiritbaw.jpg'), url('../images/spiritbaw.jpg');  
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: left, right;
+    }
+
+    .back-old{
+        background-image: url('../images/back-old.jpg');  
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .color-primary .fade{        
+        background: rgba(88,24,24,0.90);
+    }
+    .color-tertiary .fade{        
+        background: rgba(68,68,68,0.90);
     }
 }
 
