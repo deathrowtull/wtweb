@@ -12,8 +12,58 @@ img{
     width: 100%;
 }
 
-ul > li:last-child{
-//    padding-bottom: 0;
+ul.inline{
+    list-style: none;
+    text-align: center;
+    margin: 0px 1rem;
+}
+
+ul.inline li{
+    display: inline-block;
+    padding: 0px 1rem;
+}
+
+ul.inline li > * {
+    font-weight: 100;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.side-nav li  {    
+    border-bottom: 1px solid #444;
+    list-style: none;
+}
+
+.side-nav li ul {    
+    margin-left: 0;
+}
+
+.side-nav li ul li {    
+    border: none;
+}
+
+.side-nav li ul li:before {
+    content: "\f148";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: .25rem;
+    padding-top: .25rem;
+    padding-left: .15rem;
+    display: block;
+    float: left;
+    width: 1.2em;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+
+
+.side-nav li a:not(.button) {    
+    padding: 0.2rem 0rem;
 }
 
 .row {
@@ -382,6 +432,10 @@ nav .fa-search::before
     background-color: #581818;
     color: #fff;
 }
+.color-primary.dark{
+    background-color: #26060D;
+    color: #fff;
+}
 .color-secondary{
     background-color: #fff; 
 }
@@ -430,7 +484,7 @@ nav .fa-search::before
 }
 
 .social i{
-    font-size: 2.5em
+    font-size: 1.5em
 }
 .social .small-block-grid-5 > li {
     text-align: center;
@@ -443,8 +497,7 @@ nav .fa-search::before
 
 .news,
 .spotlight,
-.events,
-.social{
+.events{
     padding-bottom: 1rem;
 }
 
@@ -492,6 +545,12 @@ nav .fa-search::before
     float: left;
     border: .15rem solid;
     text-transform: uppercase;
+}
+
+.border.small {    
+    margin: 0 0 .10rem;
+    padding: .7rem 1rem; 
+    text-transform: none;   
 }
 
 .events ul li a{
@@ -569,9 +628,7 @@ nav .fa-search::before
         pointer-events: none;
     }
 
-    .social i{
-        font-size: 2em
-    }
+
     .breadcrumbs {
         background-color: transparent;
         border: medium none;
