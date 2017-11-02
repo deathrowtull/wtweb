@@ -1,0 +1,375 @@
+<!doctype html>
+<html ng-app="WtDirectory" class="no-js" lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>West Texas A&amp;M</title>
+        <!-- build:css css/libraries.min.css -->
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css css/app.min.css -->
+        <link rel="stylesheet" href="../css/app.css">
+        <link rel="stylesheet" href="../css/app_override.css">
+        <!-- endbuild -->
+        <!-- build:js js/vendor/modernizr.min.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css">
+        
+   
+    </head>
+    <body>
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <div class="fixed">
+                    <nav class="tab-bar color-primary hide-for-large-up" style="border-bottom: #fff thin solid;">
+                        <section class="left-small">
+                            <a class="left-off-canvas-toggle menu-icon" href="#">
+                                <span></span>
+                            </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                            <!--<h1 class="title">WTAMU</h1>-->                            
+                            <!--<a class="logotext" href="http://www.wtamu.edu">
+                                WTAMU
+                            </a>-->
+                        </section>
+                        <section class="right-small">
+                            <a href="http://www.wtamu.edu/search/default.aspx"><i class="fa fa-search"></i></a>
+                        </section>
+                    </nav>
+                    <nav class="top-bar color-primary show-for-large-up" data-topbar role="navigation">
+                        <section class="top-bar-section  show-for-large-up">
+                            <ul class="title-area">
+                                <li class="name">
+                                    <a class="logotext" href="../">
+                                        West Texas A&amp;M University
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                        <section class="top-bar-section">
+                            <ul class="right" style="padding-top: 12px;">
+                                <li class="has-dropdown">
+                                    <a style="line-height: 2rem" href="#">Go To</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Future Students</a></li>
+                                        <li><a href="#">Current Students</a></li>
+                                        <li><a href="#">Faculty &amp; Staff</a></li>
+                                        <li><a href="#">Alumni &amp; Friends</a></li>
+                                        <li><a href="#">Parents &amp; Family</a></li>
+                                        <li><a href="#">Visitors</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="az.html" class="button expand">
+                                        A-Z
+                                    </a>   
+                                </li>
+                                <li>
+                                    <a href="http://www.wtamu.edu/search" class="button expand">
+                                        <i class="fa fa-search" style="margin-top: -1px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                    <nav class="top-bar color-secondary scroll-hide" data-topbar role="navigation" style="border-bottom: #581818 thin solid;">
+                        <div class="logo-wrapper">
+                            <div class="logo">
+                                <img alt="image" src="../images/spirit.png">
+                            </div>
+                        </div>
+                        <section class="top-bar-section show-for-large-up">
+                            <ul class="left">
+                                <li>
+                                    <a href="/about/about-wtamu.aspx">About</a>
+                                </li>
+                                <li>
+                                    <a href="/admissionshub/default.aspx">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="/academics/default.aspx">Academics</a>
+                                </li>
+                            </ul>
+                            <ul class="right">
+                                <li>
+                                    <a href="/student-support/default.aspx">Student Support</a>
+                                </li>
+                                <li>
+                                    <a href="/giving/default.aspx">Giving</a>
+                                </li>
+                                <li>
+                                    <a href="/administration/veterans-services.aspx">Veterans</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>                    
+                </div>
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li>
+                            <label>WTAMU</label>
+                        </li>
+                        <li>
+                            <a href="/about/about-wtamu.aspx">About</a>
+                        </li>
+                        <li>
+                            <a href="/admissionshub/default.aspx">Admissions</a>
+                        </li>
+                        <li>
+                            <a href="/academics/default.aspx">Academics</a>
+                        </li>
+                        <li>
+                            <a href="/student-support/default.aspx">Student Support</a>
+                        </li>
+                        <li>
+                            <a href="/giving/default.aspx">Giving</a>
+                        </li>
+                        <li>
+                            <a href="/administration/veterans-services.aspx">Veterans</a>
+                        </li>
+
+                        <li>
+                            <label>Audience</label>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/future-students.aspx">Future Students</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/current-students.aspx">Current Students</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/faculty-staff.aspx">Faculty &amp; Staff</a>
+                        </li>
+                        <li>
+                            <a href="http://www.buffalum.com/">Alumni &amp; Friends</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/visitors.aspx">Parents &amp; Family</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wtamu.edu/home/visitors.aspx">Visitors</a>
+                        </li>
+                    </ul>
+                </aside>                
+                <section class="main-section">
+                    <div class="row" ng-controller="directorySearch">
+                        <div class="small-12 small-centered medium-10 medium-centered columns" style="padding-top: 1rem">
+                            <ul class="breadcrumbs">
+                                <li><a href="../">WTAMU</a></li>
+                                <li class="unavailable"><a href="#">Directory</a></li>
+                            </ul>
+                            <h1>Search</h1>                            
+
+                            <div id="tabs" class="tabs" style="padding-bottom: 30px">
+                                <ul>
+                                    <li><a href="#tabs-2">Experts</a></li>
+                                </ul>
+                              
+                                <div id="tabs-2">
+                                    <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
+                                        <label  class="">
+                                            <input type="text" ng-model="search.$" placeholder="Search People" ng-model-options="{debounce: 500}"/>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
+                                        <div id="my_favorite_latin_words" style="width: 100%; height: 200px;"></div>
+                                    </div>
+                                    
+                                    
+                                    <ul class="small-block-grid-1 medium-block-grid-2 directory">
+                                        <!-- filters to just the name portion-->
+                                        <li class="animation" ng-repeat="person in people | filter:search track by person.phone" ng-show="search.$.length" style="padding-left: 0">
+                                            <h3>{{person.name}}</h3>                                            
+                                            <div class="caption small-12 medium-12 large-6" style="float: left">
+                                                <strong>Title:</strong> {{person.title}}<br />
+                                                <strong>Location:</strong> {{person.building}} {{person.room}}<br />
+                                                <p class="hide">{{person.expertise}}</p>
+                                                <a href="tel:{{person.phone}}">{{person.phone}}</a><br />
+                                                <a href="mailto:{{person.email}}">{{person.email}}</a>                                        
+                                            </div>
+                                            <div class="small-12 medium-12 large-6 dimage">
+                                                <div class="small-8 small-centered columns">
+                                                    <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <a href="#" class="button small-12 large-6">View Biography</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                
+                                </div>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer row color-primary">
+                        <div class="small-12 small-centered medium-10 medium-centered columns ">
+                            <ul class="small-block-grid-1 small-centered medium-block-grid-2">
+                                <li class="logo">
+                                    <a href="#" class="expand">
+                                        <img style="width: auto" alt="The Texas A&M System" src="http://www.wtamu.edu/images/MemberTAMUS.png">
+                                    </a>
+                                </li>
+                                <li class="reg" style="font-size: .75em;">                                    
+                                    <a href="/about/web-accessibility.aspx">Accessibility</a> -
+                                    <a href="/home/accreditation.aspx">Accreditation</a> -
+                                    <a href="/administration/11-consumer-information.aspx">Consumer Information</a><br /> 
+                                    <a href="/about/contact-us.aspx">Contact Us</a> -
+                                    <a href="/about/emergency-information.aspx">Emergency Information</a> -
+                                    <a href="/webres/File/Administrative/EnergyManagementReport.pdf" target="_blank">Energy Management Report</a><br /> 
+                                    <a href="/ferpa">Family Educational Rights and Privacy Act (FERPA)</a><br /> 
+                                    <a href="/home/link-policy-and-privacy-statement.aspx#forms">Form Policy</a> -
+                                    <a href="http://www.wtamu.edu/about/house-bill-2504-requirements.aspx">House Bill 2504</a> -
+                                    <a href="https://www.tamus.edu/business/budgets-and-accounting/legislative-appropriations-requests/" target="_blank">Legislative Appropriation Request</a><br /> 
+                                    <a href="http://gov.texas.gov/" target="_blank">Texas Homeland Security</a> -
+                                    <a href="http://wtamu.edu/webres/File/Administrative/university_org_chart.pdf" target="_blank">University Organizational Chart</a><br /> 
+                                </li> 
+                                                                
+                            </ul>                            
+                        </div>
+                    </div>
+                    <div class="row color-secondary">
+                        <div class="small-12 small-centered medium-10 medium-centered columns " style="text-align: center; font-size: .75em;">
+                            <div>
+                                <a target="_blank" href="http://www.state.tx.us/">State of Texas</a> -
+                                <a target="_blank" href="http://veterans.portal.texas.gov">Texas Veterans Portal</a> -
+                                <a target="_blank" href="https://secure.ethicspoint.com/domain/en/report_custom.asp?clientid=19681">Risk, Fraud and Misconduct Hotline</a> -
+                                <a target="_blank" href="https://www.tsl.state.tx.us/search/node/">Statewide Search</a> -
+                                <a href="/home/link-policy-and-privacy-statement.aspx">Link Policy and Privacy Statement</a> -
+                                <a href="/about/open-records.aspx">Open Records/Public Information Act</a> -
+                                <a href="http://www.wtamu.edu/about/equal-opportunity-nondiscrimination.aspx">Equal Opportunity/Nondiscrimination </a> -
+                                <a target="_blank" href="http://www.txhighereddata.org/approot/resumes/ir_launch.htm">Online Institutional Resumes</a> -
+                                <a target="_blank" href="http://www.thecb.state.tx.us/apps/txcrews/">Texas Consumer Resource for Education and Workforce Statistics (Texas CREWS) </a>
+                            </div>
+                            <br /> © West Texas A&amp;M University | All rights Reserved | Canyon, Tx 79016 |
+                            <a href="tel:806-290-0000">806-290-0000</a>
+                        </div>
+                    </div>
+                </section>   
+            </div>
+        </div>     
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        
+        <!--word cloud script tags-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
+    
+        <!-- build:js js/vendor/libraries.min.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js js/vendor/foundation.min.js -->
+        <script src="../bower_components/foundation/js/foundation/foundation.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.abide.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.alert.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.clearing.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.interchange.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.slider.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.tab.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
+        <script src="../bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+        <!-- endbuild -->        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-animate.js"></script>
+        <!-- build:js js/app.min.js -->
+        <script src="../js/app.js"></script>
+        <!-- endbuild -->
+        <script src="../js/init.js"></script>
+
+        <script>               
+            function getParameterByName(name, url) {
+                if (!url) {
+                  url = window.location.href;
+                }
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                    return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            var q = getParameterByName('q');            
+            $('#search_text_box').val(q);
+        
+            var App = angular.module('WtDirectory', ['ngAnimate']);
+
+            App.controller('directorySearch', function($scope, $http) {
+                $http.get('./people.js')
+                    .then(function(res) {
+                    $scope.people = res.data;
+                });
+            });
+
+            var word_list = [
+                { text: "teachers", weight: 50, html: { "data-tooltip": "50" } },
+                { text: "classes", weight: 44, html: { "data-tooltip": "44" } },
+                { text: "exercises", weight: 35, html: { "data-tooltip": "35" } },
+                { text: "videos", weight: 34, html: { "data-tooltip": "34" } },
+                { text: "course", weight: 34, html: { "data-tooltip": "34" } },
+                { text: "online", weight: 31, html: { "data-tooltip": "31" } },
+                { text: "quality", weight: 29, html: { "data-tooltip": "29" } },
+                { text: "improve", weight: 29, html: { "data-tooltip": "29" } },
+                { text: "site", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "sat", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "lessons", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "acme", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "live", weight: 27, html: { "data-tooltip": "27" } },
+                { text: "content", weight: 27, html: { "data-tooltip": "27" } },
+                { text: "good", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "time", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "excellent", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "material", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "well", weight: 25, html: { "data-tooltip": "25" } },
+                { text: "teachers", weight: 50, html: { "data-tooltip": "50" } },
+                { text: "classes", weight: 44, html: { "data-tooltip": "44" } },
+                { text: "exercises", weight: 35, html: { "data-tooltip": "35" } },
+                { text: "videos", weight: 34, html: { "data-tooltip": "34" } },
+                { text: "course", weight: 34, html: { "data-tooltip": "34" } },
+                { text: "online", weight: 31, html: { "data-tooltip": "31" } },
+                { text: "quality", weight: 29, html: { "data-tooltip": "29" } },
+                { text: "improve", weight: 29, html: { "data-tooltip": "29" } },
+                { text: "site", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "sat", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "lessons", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "acme", weight: 28, html: { "data-tooltip": "28" } },
+                { text: "live", weight: 27, html: { "data-tooltip": "27" } },
+                { text: "content", weight: 27, html: { "data-tooltip": "27" } },
+                { text: "good", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "time", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "excellent", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "material", weight: 26, html: { "data-tooltip": "26" } },
+                { text: "well", weight: 25, html: { "data-tooltip": "25" } }
+            ];
+            $(function() {
+                $("#my_favorite_latin_words").jQCloud(word_list, {
+                    shape: "rectangular",
+                    autoResize: true
+                });
+            });
+
+            $( "#tabs" ).tabs();            
+            
+        </script>
+    </body>
+</html>
