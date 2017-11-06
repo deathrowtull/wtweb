@@ -174,7 +174,7 @@
                                 <div id="tabs-2">
                                     <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
                                         <label  class="">
-                                            <input type="text" ng-model="search.$" placeholder="Search People" ng-model-options="{debounce: 500}"/>
+                                            <input id="expertq" type="text" ng-model="search.$" placeholder="Search People"/>
                                         </label>
                                     </div>
                                     
@@ -185,7 +185,7 @@
                                     
                                     <ul class="small-block-grid-1 medium-block-grid-2 directory">
                                         <!-- filters to just the name portion-->
-                                        <li class="animation" ng-repeat="person in people | filter:search track by person.phone" ng-show="search.$.length" style="padding-left: 0">
+                                        <li class="animation" ng-repeat="person in people | filter:search track by person.phone" style="padding-left: 0">
                                             <h3>{{person.name}}</h3>                                            
                                             <div class="caption small-12 medium-12 large-6" style="float: left">
                                                 <strong>Title:</strong> {{person.title}}<br />
@@ -322,8 +322,8 @@
             });
 
             var word_list = [
-                { text: "teachers", weight: 50, html: { "data-tooltip": "50" } },
-                { text: "classes", weight: 44, html: { "data-tooltip": "44" } },
+                { text: "teachers", weight: 50, html: { "data-tooltip": "50", "ng-model": "search.$" }, handlers: {click: function(){$('#expertq').val($(this).html()); } } },
+                { text: "classes", weight: 44, html: { "data-tooltip": "44" },  handlers: {click: function(){console.log($(this).html()); } } },
                 { text: "exercises", weight: 35, html: { "data-tooltip": "35" } },
                 { text: "videos", weight: 34, html: { "data-tooltip": "34" } },
                 { text: "course", weight: 34, html: { "data-tooltip": "34" } },
@@ -365,8 +365,17 @@
                 $("#my_favorite_latin_words").jQCloud(word_list, {
                     shape: "rectangular",
                     autoResize: true
-                });
+                    
+                })
+                .then (
+                  $('#my_favorite_latin_words').click(function(){
+                       $('#search_text_box').val($(this).innerHTML());
+                      console.log($('#my_favorite_latin_words').children('span'))
+                   })
+                );
             });
+            
+            
 
             $( "#tabs" ).tabs();            
             
