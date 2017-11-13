@@ -15,12 +15,8 @@
         <!-- endbuild -->
         <!-- build:js js/vendor/modernizr.min.js -->
         <script src="../bower_components/modernizr/modernizr.js"></script>
-        
         <!-- endbuild -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css">
-        
-   
     </head>
     <body>
         <div class="off-canvas-wrap" data-offcanvas>
@@ -169,34 +165,58 @@
 
                             <div id="tabs" class="tabs" style="padding-bottom: 30px">
                                 <ul>
-                                    <li><a href="#tabs-2">Experts</a></li>
+                                    <li><a href="#tabs-1">Google</a></li>
+                                    <li><a href="#tabs-2">Directory</a></li>
                                 </ul>
-                              
-                              <!--
+                                <div id="tabs-1" class="">
+                                    <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
+                                        <form action="./" id="searchWeb" method="get">
+                                            <div class="search-field">
+                                                <input aria-labelledby="search-label" id="search_text_box" name="q" placeholder="Search WT" role="textbox" type="search"
+                                                style="font-size: 15px;"/>
+                                                <!--<input type="submit" value="Search" style="font-size: 15px; width: 10%"/>-->
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <script type="text/javascript">// <![CDATA[                                                        
+                                        var imgAltTagsFix = function() {
+                                            var gscSearch = document.querySelector('input.gsc-search-button');
+                                            //var gscBranding = document.querySelector('.gcsc-branding');
+                                            gscSearch.setAttribute('alt', 'Google Custom Search Button');
+                                            //gscBranding.setAttribute('aria-hidden', 'True');
+                                        };
+                                        window.__gcse = {
+                                            callback: imgAltTagsFix
+                                        };
+                                        (function() {
+                                            var cx = '017207163629162198634:3oziw4igxw8';
+                                            var gcse = document.createElement('script');
+                                            gcse.type = 'text/javascript';
+                                            gcse.async = true;
+                                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                            '//www.google.com/cse/cse.js?cx=' + cx;
+                                            var s = document.getElementsByTagName('script')[0];
+                                            s.parentNode.insertBefore(gcse, s);
+                                          })();
+                                        // ]]>
+                                            
+                                    </script>                                    
+                                    <div class="gcse-searchresults-only" data-linktarget="_parent">&#160;</div>
+                                </div>
                                 <div id="tabs-2">
                                     <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
                                         <label  class="">
-                                            <input id="expertq" type="text" ng-model="search.$" placeholder="Search People"/>
+                                            <input type="text" ng-model="search.$" placeholder="Search People" ng-model-options="{debounce: 500}"/>
                                         </label>
                                     </div>
-                                    -->
                                     
-                                    
-                                    <select name="repeatSelect" id="repeatSelect" ng-model="search.$">
-                                    <option value="" disabled selected>Select Expertise</option>
-                                  <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
-                                    </select>
-                               
-
-                                    <!--<div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
-                                        <div id="my_favorite_latin_words" style="width: 100%; height: 200px;"></div>
-                                    </div>-->
                                     
                                     
                                     <ul class="small-block-grid-1 medium-block-grid-2 directory">
                                         <!-- filters to just the name portion-->
-                                        <li class="animation" ng-repeat="person in people | filter:search" style="padding-left: 0">
-                                            <h3>{{person.first}} {{person.last}}</h3>                                            
+                                        <li class="animation" ng-repeat="person in people | filter:search track by person.phone" ng-show="search.$.length" style="padding-left: 0">
+                                            <h3>{{person.name}}</h3>                                            
                                             <div class="caption small-12 medium-12 large-6" style="float: left">
                                                 <strong>Title:</strong> {{person.title}}<br />
                                                 <strong>Location:</strong> {{person.building}} {{person.room}}<br />
@@ -269,10 +289,6 @@
         </div>     
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-        
-        <!--word cloud script tags-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
-    
         <!-- build:js js/vendor/libraries.min.js -->
         <!-- bower:js -->
         <script src="../bower_components/fastclick/lib/fastclick.js"></script>
@@ -297,7 +313,6 @@
         <script src="../bower_components/foundation/js/foundation/foundation.tab.js"></script>
         <script src="../bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
         <script src="../bower_components/foundation/js/foundation/foundation.topbar.js"></script>
-        
         <!-- endbuild -->        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -320,154 +335,37 @@
                     return decodeURIComponent(results[2].replace(/\+/g, " "));
             }
 
+            var q = getParameterByName('q');            
+            $('#search_text_box').val(q);
         
             var App = angular.module('WtDirectory', ['ngAnimate']);
 
             App.controller('directorySearch', function($scope, $http) {
-               $http.get('./test.js')
-                 .then(function(res) {
-                 $scope.people = res.data;
-                 console.log($scope.people);
-                 
-                $scope.data = {
-                    model: null,
-                    availableOptions: [
-                        { name: 'Accounting' },
-                        { name: 'Advertising and PR' },
-                        { name: 'Agriculture' },
-                        { name: 'Agricultural Business and Economics' },
-                        { name: 'AIDS and HIV' },
-                        { name: 'Alternative Energy' },
-                        { name: 'Animal Science' },
-                        { name: 'Art' },
-                        { name: 'Banking' },
-                        { name: 'Biology' },
-                        { name: 'Business Communication' },
-                        { name: 'Campus/Student Life' },
-                        { name: 'Chemistry' },
-                        { name: 'Child Development and Early Education' },
-                        { name: 'Codicology' },
-                        { name: 'Communication Disorders' },
-                        { name: 'Communication Studies' },
-                        { name: 'Criminal Justice' },
-                        { name: 'Curriculum Development' },
-                        { name: 'Dance' },
-                        { name: 'Disaster Planning' },
-                        { name: 'Distance Education and Instructional Technology' },
-                        { name: 'Diversity Issues/Multiculturalism' },
-                        { name: 'Economics' },
-                        { name: 'Education' },
-                        { name: 'Energy Resources' },
-                        { name: 'Engineering and Engineering Technology' },
-                        { name: 'English Language' },
-                        { name: 'Environmental Science' },
-                        { name: 'Finance' },
-                        { name: 'Foreign Language/Cultures' },
-                        { name: 'Geography' },
-                        { name: 'Geology' },
-                        { name: 'Health, Nursing and Medical Issues' },
-                        { name: 'Higher Education' },
-                        { name: 'History' },
-                        { name: 'Information Technology' },
-                        { name: 'International Business and Trade' },
-                        { name: 'Law and Legal Issues' },
-                        { name: 'Leadership' },
-                        { name: 'Learning Styles/Teaching Methods' },
-                        { name: 'Literacy and Reading' },
-                        { name: 'Literature' },
-                        { name: 'Management' },
-                        { name: 'Marketing' },
-                        { name: 'Marriage and Family' },
-                        { name: 'Mass Communication/Media' },
-                        { name: 'Mathematics' },
-                        { name: 'Music' },
-                        { name: 'Organizational Behavior' },
-                        { name: 'Physical Education, Recreation and Leisure' },
-                        { name: 'Plant Science' },
-                        { name: 'Politics and Government' },
-                        { name: 'Pop Culture' },
-                        { name: 'Psychology' },
-                        { name: 'Religion' },
-                        { name: 'Science Education' },
-                        { name: 'Sociology/Social Work' },
-                        { name: 'Soil Science/Management' },
-                        { name: 'Spanish Language' },
-                        { name: 'Statistics' },
-                        { name: 'Strategic Planning' },
-                        { name: 'Terrorism' },
-                        { name: 'Theatre' },
-                        { name: 'Transportation' },
-                        { name: 'Writing' }
-                    ]
-                };
-                (window.angular);
-
-                   /* 
-                     var q = getParameterByName('q');
-                     $('#search_text_box').val(q);
-                    
-                     var word_list = [
-                { text: "teachers", weight: 50, html: { "data-tooltip": "50", "ng-model" : "search.$" }, handlers: {click: function(){$('#expertq').val($(this).html()); } } },
-                { text: "classes", weight: 44, html: { "data-tooltip": "44" },  handlers: {click: function(){console.log($(this).html()); } } },
-                { text: "exercises", weight: 35, html: { "data-tooltip": "35" } },
-                { text: "videos", weight: 34, html: { "data-tooltip": "34" } },
-                { text: "course", weight: 34, html: { "data-tooltip": "34" } },
-                { text: "online", weight: 31, html: { "data-tooltip": "31" } },
-                { text: "quality", weight: 29, html: { "data-tooltip": "29" } },
-                { text: "improve", weight: 29, html: { "data-tooltip": "29" } },
-                { text: "site", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "sat", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "lessons", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "acme", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "live", weight: 27, html: { "data-tooltip": "27" } },
-                { text: "content", weight: 27, html: { "data-tooltip": "27" } },
-                { text: "good", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "time", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "excellent", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "material", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "well", weight: 25, html: { "data-tooltip": "25" } },
-                { text: "teachers", weight: 50, html: { "data-tooltip": "50" } },
-                { text: "classes", weight: 44, html: { "data-tooltip": "44" } },
-                { text: "exercises", weight: 35, html: { "data-tooltip": "35" } },
-                { text: "videos", weight: 34, html: { "data-tooltip": "34" } },
-                { text: "course", weight: 34, html: { "data-tooltip": "34" } },
-                { text: "online", weight: 31, html: { "data-tooltip": "31" } },
-                { text: "quality", weight: 29, html: { "data-tooltip": "29" } },
-                { text: "improve", weight: 29, html: { "data-tooltip": "29" } },
-                { text: "site", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "sat", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "lessons", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "acme", weight: 28, html: { "data-tooltip": "28" } },
-                { text: "live", weight: 27, html: { "data-tooltip": "27" } },
-                { text: "content", weight: 27, html: { "data-tooltip": "27" } },
-                { text: "good", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "time", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "excellent", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "material", weight: 26, html: { "data-tooltip": "26" } },
-                { text: "well", weight: 25, html: { "data-tooltip": "25" } }
-            ];
-            $(function() {
-                $("#my_favorite_latin_words").jQCloud(word_list, {
-                    shape: "rectangular",
-                    autoResize: true
-                    
-                }
-                ).then (
-                  $('#my_favorite_latin_words').click(function(){
-                     
-                       $('#search_text_box').val($(this).innerHTML());
-                       
-                       $( "#search_text_box").trigger('change');
-                       
-                   })
-                );
-            });
-            */
-                    
+                $http.get('./people.js')
+                    .then(function(res) {
+                    $scope.people = res.data;
                 });
+                
+                var data = $.param({
+                    search: "ernesto",
+                    stype: "all",
+                    xml_output: 1
+                });
+                
+                var config = {
+                    headers : {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                };
+                
+                $http.post('http://apps.wtamu.edu/dir/', data, config)
+                .success(function(data, headers, config){
+                    $scope.PostDataResponse = data;
+                    console.log(data);
+                });
+               
             });
             
-
             $( "#tabs" ).tabs();            
             
         </script>
