@@ -172,22 +172,20 @@
                                     <li><a href="#tabs-2">Experts</a></li>
                                 </ul>
                               
-                              <!--
+                             
                                 <div id="tabs-2">
                                     <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
-                                        <label  class="">
+                                        <!--<label  class="">
                                             <input id="expertq" type="text" ng-model="search.$" placeholder="Search People"/>
-                                        </label>
+                                        </label>-->
+                                        
+                                        <select name="repeatSelect" id="repeatSelect" ng-model="search.expertgroup.expertise">
+                                            <option value="" disabled selected>Select Expertise</option>
+                                            <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
+                                        </select>
+                                    
                                     </div>
-                                    -->
                                     
-                                    
-                                    <select name="repeatSelect" id="repeatSelect" ng-model="search.$">
-                                    <option value="" disabled selected>Select Expertise</option>
-                                  <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
-                                    </select>
-                               
-
                                     <!--<div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
                                         <div id="my_favorite_latin_words" style="width: 100%; height: 200px;"></div>
                                     </div>-->
@@ -195,8 +193,8 @@
                                     
                                     <ul class="small-block-grid-1 medium-block-grid-2 directory">
                                         <!-- filters to just the name portion-->
-                                        <li class="animation" ng-repeat="person in people | filter:search" style="padding-left: 0">
-                                            <h3>{{person.first}} {{person.last}}</h3>                                            
+                                        <li class="animation" ng-repeat="person in people | filter:search track by $index  " style="padding-left: 0">
+                                            <h3>{{person.designation}} {{person.fname}} {{person.lname}}</h3>                                            
                                             <div class="caption small-12 medium-12 large-6" style="float: left">
                                                 <strong>Title:</strong> {{person.title}}<br />
                                                 <strong>Location:</strong> {{person.building}} {{person.room}}<br />
@@ -275,7 +273,7 @@
     
         <!-- build:js js/vendor/libraries.min.js -->
         <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <!--<script src="../bower_components/jquery/dist/jquery.js"></script>-->
         <script src="../bower_components/fastclick/lib/fastclick.js"></script>
         <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
         <!-- endbower -->
@@ -325,7 +323,7 @@
             var App = angular.module('WtDirectory', ['ngAnimate']);
 
             App.controller('directorySearch', function($scope, $http) {
-               $http.get('./test.js')
+               $http.get('./experts.js')
                  .then(function(res) {
                  $scope.people = res.data;
                  console.log($scope.people);
@@ -333,7 +331,7 @@
                 $scope.data = {
                     model: null,
                     availableOptions: [
-                        { name: 'Accounting' },
+                        { name: 'Accounting'},
                         { name: 'Advertising and PR' },
                         { name: 'Agriculture' },
                         { name: 'Agricultural Business and Economics' },
