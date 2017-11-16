@@ -166,7 +166,8 @@
                             <div id="tabs" class="tabs" style="padding-bottom: 30px">
                                 <ul>
                                     <li><a href="#tabs-2">Directory</a></li>
-                                    <li><a href="#tabs-1">Google</a></li>                                    
+                                    <li><a href="#tabs-1">Google</a></li>    
+                                    <li><a href="#tabs-3">Experts</a></li>
                                 </ul>
                                 <div id="tabs-1" class="">
                                     <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px" >
@@ -236,11 +237,48 @@
                                     </ul>
                                 
                                 </div>
-                              
-                            </div>
+                                        <div id="tabs-3" ng-controller="expertSearch">
+                                            <div class="small-12 columns color-tertiary" style="padding: 15px 15px 0px 15px">
+                                                <!--<label  class="">
+                                                <input id="expertq" type="text" ng-model="search.$" placeholder="Search People"/>
+                                                /label>-->
+                                        
+                                                <select name="repeatSelect" id="repeatSelect" ng-model="search.expertgroup.expertise">
+                                                   <option value="" disabled selected>Select Expertise</option>
+                                                   <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
+                                                </select>
+                                        
+                                            </div>
+                                            
+                                              <ul class="small-block-grid-1 medium-block-grid-2 directory">
+                                        <!-- filters to just the name portion-->
+                                        <li class="animation" ng-repeat="person in people | filter:search track by $index  " style="padding-left: 0">
+                                            <h3>{{person.designation}} {{person.fname}} {{person.lname}}</h3>                                            
+                                            <div class="caption small-12 medium-12 large-6" style="float: left">
+                                                <strong>Title:</strong> {{person.title}}<br />
+                                                <strong>Location:</strong> {{person.building}} {{person.room}}<br />
+                                                <p class="hide">{{person.expertise}}</p>
+                                                <a href="tel:{{person.phone}}">{{person.phone}}</a><br />
+                                                <a href="mailto:{{person.email}}">{{person.email}}</a>                                        
+                                            </div>
+                                            <div class="small-12 medium-12 large-6 dimage">
+                                                <div class="small-8 small-centered columns">
+                                                    <img src="http://cascadetest.wtamu.edu/test/directory/{{person.thumb}}" />
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <a href="#" class="button small-12 large-6">View Biography</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                            
+                                      </div>
+                                        
+                                 </div>
+                                        
+                             </div>
+                    
 
-                        </div>
-                    </div>
                     <div class="footer row color-primary">
                         <div class="small-12 small-centered medium-10 medium-centered columns ">
                             <ul class="small-block-grid-1 small-centered medium-block-grid-2">
@@ -374,6 +412,93 @@
                     }
                 };                
             });
+            
+              $( "#tabs" ).tabs();    
+            
+            
+            App.controller('expertSearch', function($scope, $http) {
+               $http.get('./experts.js')
+                 .then(function(res) {
+                 $scope.people = res.data;
+                 console.log($scope.people);
+                 
+                $scope.data = {
+                    model: null,
+                    availableOptions: [
+                        { name: 'Accounting'},
+                        { name: 'Advertising and PR' },
+                        { name: 'Agriculture' },
+                        { name: 'Agricultural Business and Economics' },
+                        { name: 'AIDS and HIV' },
+                        { name: 'Alternative Energy' },
+                        { name: 'Animal Science' },
+                        { name: 'Art' },
+                        { name: 'Banking' },
+                        { name: 'Biology' },
+                        { name: 'Business Communication' },
+                        { name: 'Campus/Student Life' },
+                        { name: 'Chemistry' },
+                        { name: 'Child Development and Early Education' },
+                        { name: 'Codicology' },
+                        { name: 'Communication Disorders' },
+                        { name: 'Communication Studies' },
+                        { name: 'Criminal Justice' },
+                        { name: 'Curriculum Development' },
+                        { name: 'Dance' },
+                        { name: 'Disaster Planning' },
+                        { name: 'Distance Education and Instructional Technology' },
+                        { name: 'Diversity Issues/Multiculturalism' },
+                        { name: 'Economics' },
+                        { name: 'Education' },
+                        { name: 'Energy Resources' },
+                        { name: 'Engineering and Engineering Technology' },
+                        { name: 'English Language' },
+                        { name: 'Environmental Science' },
+                        { name: 'Finance' },
+                        { name: 'Foreign Language/Cultures' },
+                        { name: 'Geography' },
+                        { name: 'Geology' },
+                        { name: 'Health, Nursing and Medical Issues' },
+                        { name: 'Higher Education' },
+                        { name: 'History' },
+                        { name: 'Information Technology' },
+                        { name: 'International Business and Trade' },
+                        { name: 'Law and Legal Issues' },
+                        { name: 'Leadership' },
+                        { name: 'Learning Styles/Teaching Methods' },
+                        { name: 'Literacy and Reading' },
+                        { name: 'Literature' },
+                        { name: 'Management' },
+                        { name: 'Marketing' },
+                        { name: 'Marriage and Family' },
+                        { name: 'Mass Communication/Media' },
+                        { name: 'Mathematics' },
+                        { name: 'Music' },
+                        { name: 'Organizational Behavior' },
+                        { name: 'Physical Education, Recreation and Leisure' },
+                        { name: 'Plant Science' },
+                        { name: 'Politics and Government' },
+                        { name: 'Pop Culture' },
+                        { name: 'Psychology' },
+                        { name: 'Religion' },
+                        { name: 'Science Education' },
+                        { name: 'Sociology/Social Work' },
+                        { name: 'Soil Science/Management' },
+                        { name: 'Spanish Language' },
+                        { name: 'Statistics' },
+                        { name: 'Strategic Planning' },
+                        { name: 'Terrorism' },
+                        { name: 'Theatre' },
+                        { name: 'Transportation' },
+                        { name: 'Writing' }
+                    ]
+                };
+                (window.angular);
+                
+                 });
+            });
+            
+            
 
             $( "#tabs" ).tabs();            
             
